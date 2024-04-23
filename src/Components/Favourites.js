@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { movies } from './getMovies'
+// import { movies } from './getMovies'
  
 export default class Favourites extends Component {
     constructor(){
@@ -89,7 +89,7 @@ sortPopularityAsc=()=>{
         }
         handleDelete=(id)=>{
           let newarr = [];
-          newarr = this.state.movies.filter((movieObj)=>movieObj.id!=id)
+          newarr = this.state.movies.filter((movieObj)=>movieObj.id!==id)
           this.setState({
               movies:[...newarr]
           })
@@ -102,7 +102,7 @@ sortPopularityAsc=()=>{
         let genreids = {28:'Action',12:'Adventure',16:'Animation',35:'Comedy',80:'Crime',99:'Documentary',18:'Drama',10751:'Family',14:'Fantasy',36:'History',
                         27:'Horror',10402:'Music',9648:'Mystery',10749:'Romance',878:'Sci-Fi',10770:'TV',53:'Thriller',10752:'War',37:'Western'};
     let filterarr=[];
-    if(this.state.currText==''){
+    if(this.state.currText===''){
       filterarr=this.state.movies
   }else{
       filterarr=this.state.movies.filter((movieObj)=>{
@@ -110,8 +110,8 @@ sortPopularityAsc=()=>{
           return title.includes(this.state.currText.toLowerCase())
       })
   }
-    if(this.state.currgen!="All Genres"){
-      filterarr = this.state.movies.filter((movieObj)=>genreids[movieObj.genre_ids[0]]==this.state.currgen)    }
+    if(this.state.currgen!=="All Genres"){
+      filterarr = this.state.movies.filter((movieObj)=>genreids[movieObj.genre_ids[0]]===this.state.currgen)    }
    
       let pages = Math.ceil(filterarr.length/this.state.limit);
       let pagesarr = [];
@@ -130,7 +130,7 @@ sortPopularityAsc=()=>{
                                 <ul class="list-group favourites-genres">
                                     {
                                             this.state.genres.map((genre)=>(
-                                              this.state.currgen==genre?
+                                              this.state.currgen===genre?
                                                 <li class="list-group-item" style={{background:'red',color:'white',fontWeight:'bold'}}>{genre}</li>:
                                                 <li class="list-group-item" style={{background:'white',color:'red',fontWeight:'bold'}}   onClick={()=>this.handleGenreChange(genre)}>{genre}</li>
                                             )
@@ -172,14 +172,20 @@ sortPopularityAsc=()=>{
   </tbody>
 </table>
                               </div>
-                            <nav aria-label="Page navigation example">
-         <ul class="pagination">{
-         pagesarr.map((page)=>(
-                                                <li class="page-item"><a class="page-link" onClick={()=>this.handlePageChange(page)}>{page}</a></li>
-                                            ))
-                                        }
+                              <nav aria-label="Page navigation example">
+  <ul className="pagination">
+    {
+      pagesarr.map((page) => (
+        <li className="page-item" key={page}>
+          <a className="page-link" onClick={() => this.handlePageChange(page)} style={{ color: 'black' }}>
+            {page}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
+
                         </div>
                         </div>
                 </div>
