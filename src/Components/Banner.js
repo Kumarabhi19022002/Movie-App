@@ -3,11 +3,12 @@ import React, { Component } from 'react'
 
 export default class Banner extends Component {
   render() {
-    let movie=movies.results[0]
+    let movie=movies.results[1];
+
     // let movie=''
     return (
         <>
-        { movie == ''?
+        { movie === ''?
                 <div className="spinner-border text-primary" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>:
