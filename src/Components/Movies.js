@@ -87,7 +87,7 @@ handleFavouritesState=()=>{
         <span className="visually-hidden">Loading...</span>
     </div>:
     <div>
-        <h3 className="text-center"><strong>Trending</strong></h3>
+<h3 className="text-center" style={{ color: 'white' }}><strong>Trending</strong></h3>
         <div className="movies-list">
         {this.state.movies.map((movieObj)=>(
               <div className="card movies-card" onMouseEnter={()=>this.setState({hover:movieObj.id})} onMouseLeave={()=>this.setState({hover:''})}>
