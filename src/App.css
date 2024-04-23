@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -51,10 +53,15 @@ height: 70vh;
 width: 100%;
 }
 
-.banner-title{
-position: absolute;
-top: 45vh;
-left: 5vw;
+.banner-title {
+  position: absolute;
+  top: 45vh;
+  left: 5vw;
+  font-family: Calisto, serif; /* Specify Calisto as the preferred font */
+  color: red; /* Set the font color to black */
+}
+body{
+  background-color: black;
 }
 
 .banner-text{
@@ -64,6 +71,8 @@ left: 5vw;
 height: 4.5rem;
 overflow: hidden;
 margin-right: 5vw;
+color:wheat;
+font-family: Calisto, serif;
 }
 .movies-list{
   display:flex;
@@ -95,7 +104,8 @@ margin-right: 5vw;
   padding: 3rem;
 }
 .favourites-table{
-  padding: 3rem
+  padding: 3rem;
+  color:white;
 }
 @media screen and (max-width:400px) {
   .banner-card{
