@@ -47,7 +47,11 @@
   height: 70vh;
   color: white;
 }
-
+.text-center {
+  text-align: center;
+  color: white;
+  font-family: Calisto, serif;
+}
 .banner-img{
 height: 70vh;
 width: 100%;
